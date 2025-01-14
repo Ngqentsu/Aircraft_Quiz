@@ -1,4 +1,3 @@
-
 const startBtn = document.querySelector('.start-btn');
 const popupInfo = document.querySelector('.pop-info');
 const continueBtn = document.querySelector('.continue-btn');
