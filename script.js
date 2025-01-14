@@ -234,13 +234,6 @@ function selectOption(option, correctAnswer, index) {
     nextBtn.disabled = false;
 };
 
-const restartQuiz = () => {
-    currentQuestionIndex = 0;
-    score = 0;
-    quizCompleted = false;
-    displayQuestion(currentQuestionIndex);
-};
-
 nextBtn.onclick = () => {
     questionCount++;
     if (questionCount < questions.length) {
@@ -251,7 +244,14 @@ nextBtn.onclick = () => {
             <p>Your final score is ${score} / ${questions.length}.</p>
             <button class="restart-btn">Restart Quiz</button>
         `;
-        document.querySelector('.restart-btn').onclick = restartQuiz;
+	const restartQuiz = () => {
+	    currentQuestionIndex = 0;
+	    score = 0;
+	    quizCompleted = false;
+	    displayQuestion(currentQuestionIndex);
+	};
+
+	document.querySelector('.restart-btn').onclick = restartQuiz;
     }
 };
 
